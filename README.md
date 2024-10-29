@@ -49,7 +49,6 @@ import test_selection as ts
 
 # Defining the FSM in Table 1.
 bdd = BDD()
-ts.initialize_bdd(bdd)
 
 # Declare the mode variables
 bdd.declare('on')
@@ -66,7 +65,7 @@ FSM = [[on, t, f, f],
 
 # Test selection achieving maximal diagnosability in all operation modes
 
-Rs1, Imp1, diag_selected1 = ts.TestSelection(FSM)
+Rs1, Imp1, diag_selected1 = ts.TestSelection(FSM, bdd)
 
 print("Results with TestSelection:")
 print("Selected residuals :",Rs1)
